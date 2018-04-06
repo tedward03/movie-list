@@ -6,53 +6,59 @@ export default class MovieSubmit extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            title: '',
             newMovie: {
-                'title': '',
-                'category': '',
-                'release_year': '',
-                'running_time': '',
-                'description': '',
-                'image_url': ''
+                title: '',
+                category: '',
+                release_year: '',
+                running_time: '',
+                description: '',
+                image_url: ''
             }
         }
+        this.handleChange = this.handleChange.bind(this);
     }
 
     renderSubmitNewMovieForm = () => {
-        console.log("render Submit Form")
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type="text" ref="title" placeholder="title"/>
-                <input type="text" ref="description" placeholder=""/>
+                <input name="title" type="text" value={this.state.newMovie.title} onChange={this.handleChange}
+                       placeholder="title"/>
+                <input name="category" type="text" value={this.state.newMovie.category} onChange={this.handleChange}
+                       placeholder="category"/>
                 <button>Submit</button>
             </form>
         )
     }
 
     handleSubmit(e) {
-        // e.preventDefault();
+        e.preventDefault();
+        console.log(this.state.newMovie)
         // const
         //     { newMovie } = this.state,
         //     name = this.refs.title.value,
         //     email = this.refs.description.value,
-        //     phone = this.refs.phone.value;
         // this.setState({
-        //     contacts: [...contacts, {
+        //     contacts:  {
         //         name,
-        //         email,
+        //         description:,
         //         phone
-        //     }]
+        //     }
         // }, () => {
-        //     this.refs.name.value = '';
-        //     this.refs.email.value = '';
-        //     this.refs.phone.value = '';
+        //     this.refs.title.value = '';
+        //     this.refs.description.value = '';
         // });
     }
 
 
-    onChange(event) {
-        console.log("CHANGE");
-        console.log(event.target.value);
+    handleChange(event) {
+        console.log('name', event.target.name);
+        console.log('value', event.target.value);
 
+        this.setState({newMovie:
+            {...this.state.newMovie,[event.target.name]: event.target.value}
+        });
+        console.log(this.state.newMovie);
     }
 
     render() {
