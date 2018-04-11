@@ -1,1 +1,2 @@
-**This is practice Project for learning React.js ** 
+# movie-list
+practice for react phase 1
