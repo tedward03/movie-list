@@ -1,1 +1,1 @@
-**This is practice Project for learnign React.js ** 
+**This is practice Project for learning React.js ** 
