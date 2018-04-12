@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './MovieList.css';
 import moviesFromFile from '../../resources/initMovies.json';
+import apiKeyFile from '../../resources/apiKey.json';
+
 import MovieSubmit from './components/MovieSubmit';
 import MovieList from './components/MovieList';
 
@@ -27,11 +29,11 @@ export default class Movies extends Component {
     }
 
     fetchMovie(title){
-        fetch(`http://www.omdbapi.com/?t=${title}&apikey=96712aad`)
+        fetch(`http://www.omdbapi.com/?t=${title}&apikey=${apiKeyFile.apiKey}`)
             .then(results => {
                 return results.json();
-            }).then(data => {
-            this.setState({movieJson: [...this.state.movieJson, data]});
+                }).then(data => {
+                this.setState({movieJson: [...this.state.movieJson, data]});
         });
     }
 
