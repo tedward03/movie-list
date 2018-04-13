@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import TodoList from './react-components/todolist/ToDoList';
-import Movies from './react-components/movielist/Movies'
-import SimpleApiApp from './react-components/simpleapi/SimpleApiApp'
-import ClickApp from './react-components/clique/ClickApp'
+import TodoList from './react-applications/todolist/ToDoList';
+import Movies from './react-applications/movielist/Movies'
+import SimpleApiApp from './react-applications/simpleapi/SimpleApiApp'
+import ClickApp from './react-applications/clique/ClickApp'
 
 
 import registerServiceWorker from './registerServiceWorker';
