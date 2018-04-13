@@ -29,6 +29,7 @@ export default class MovieSubmit extends Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.handleNewMovie(this.state.newMovie);
+        this.setState({newMovie: {title: ''}}); // reset inout box after submit;
     }
 
 

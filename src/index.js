@@ -1,14 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import './index.css';
-import TodoList from './react-applications/todolist/ToDoList';
-import Movies from './react-applications/movielist/Movies'
-import SimpleApiApp from './react-applications/simpleapi/SimpleApiApp'
-import ClickApp from './react-applications/clique/ClickApp'
-
-
-import registerServiceWorker from './registerServiceWorker';
+import Movies from './react-applications/movielist/Movies';
+import Landing from './react-applications/landing/Landing';
+import ClickApp from './react-applications/clique/ClickApp';
+import {BrowserRouter,Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-ReactDOM.render(<Movies />, document.getElementById('root'));
-registerServiceWorker();
+render(
+    <BrowserRouter>
+        <div>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/movies" component={Movies} />
+            <Route path="/clickapp" component={ClickApp} />
+        </div>
+    </BrowserRouter>
+    , document.getElementById('root'));
