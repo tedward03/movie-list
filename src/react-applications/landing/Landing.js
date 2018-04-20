@@ -13,6 +13,9 @@ export default class Landing extends Component {
                 <Link to="/clickapp">
                     <button>ClickApp</button>
                 </Link>
+                <Link to="/todo">
+                    <button>Todo List</button>
+                </Link>
             </div>
         )
     };

@@ -1,9 +1,16 @@
-import React from 'react';
-// https://medium.com/@aghh1504/1-simple-react-todo-list-52186b62976b
-const List = props => (
+import React, {Component} from 'react';
+
+export class List extends Component {
+    constructor(){
+        super();
+    }
+}
+    List = props => (
     <ul>
         {
-            props.items.map((item, index) => <li key={index}>{item}</li>)
+            props.items.map((item, index) => <li key={index}>{item}
+                <button onClick={() => props.removeItem(item)}/>
+            </li>)
         }
     </ul>
 );
